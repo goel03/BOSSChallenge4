@@ -21,7 +21,9 @@ app.use(express.static("public"));
 
 //mongoose code
 //initial
-mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true});
+
+mongoose.set('strictQuery', true);
+mongoose.connect("mongodb://127.0.0.1/blogDB", {useNewUrlParser: true});
 
 //connect schema
 const postSchema = {
